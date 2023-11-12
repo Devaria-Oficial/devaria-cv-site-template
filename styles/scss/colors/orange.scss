@@ -1,0 +1,4 @@
+@import "../variables";
+@import "../color-mixins";
+
+@include change-theme($orange);

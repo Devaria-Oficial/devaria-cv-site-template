@@ -1,0 +1,359 @@
+/*
+Template Name: Mono CV - Portfolio & Resume Template
+Author: Lettstart Design
+Version: 1.0.0
+Website: https://lettstartdesign.com/
+File: Bootstrap File
+
+====== COLOR MIXINS =======
+
+*/
+
+@mixin change-theme($color) {
+  //reset css
+  .form-control,
+  textarea.form-control {
+    &:focus {
+      border-color: $color;
+    }
+  }
+
+  a:hover {
+    color: $color;
+  }
+
+  //plugins
+  .circle-nav {
+    .swiper-btn-container {
+      & > * {
+        background-color: rgba($color, 0.2) !important;
+        color: $color !important;
+      }
+    }
+  }
+
+  //bootstrap components
+  .pagination {
+    li {
+      &.active, &:hover {
+        &:first-child, &:last-child {
+          .page-link {
+            background: $color;
+          }
+        }
+        .page-link {
+          background: $color;
+        }
+      }
+    }
+  }
+
+  .progress {
+    .progress-bar {
+      background-color: $color;
+    }
+  }
+
+  //text and bg
+  .theme-color {
+    color: $color;
+  }
+
+  .theme-soft-bg {
+    background-color: rgba($color, 0.1);
+  }
+
+  .theme-bg {
+    background-color: $color;
+  }
+
+  //button css
+  .btn-outline-primary {
+    color: $color;
+    border-color: $color;
+    &:focus,
+    &:hover,
+    &:active,
+    &:focus:active {
+      color: $white;
+      background: $color;
+      border-color: $color;
+    }
+  }
+
+  .btn-primary {
+    background: $color !important;
+    border-color: $color !important;
+    &:focus,
+    &:hover,
+    &:active,
+    &:focus:active {
+      color: $white;
+      background: $color;
+      border-color: $color;
+    }
+  }
+
+  .btn-soft-primary {
+    background: rgba($color, 0.2);
+    border-color: rgba($color, 0.2);
+    color: $color;
+    &:focus,
+    &:hover,
+    &:active,
+    &:focus:active {
+      color: $white;
+      background: $color;
+      border-color: $color;
+    }
+  }
+
+  //common css
+  .spinner:before {
+    border-top-color: $color;
+  }
+
+  .circle-cursor-top {
+    background-color: $color;
+  }
+
+  .circle-cursor-bottom {
+    background: rgba($color, 0.6);
+  }
+
+  .underline {
+    &:after {
+      background-color: $color;
+    }
+  }
+
+  .section-title {
+    h2:after {
+      background-color: $color;
+    }
+  }
+
+  .short-info-2 {
+    border-color: $color;
+  }
+
+  .socials-icons {
+    a {
+      &:hover {
+        color: $color;
+        border-color: $color;
+      }
+    }
+  }
+
+  .social-share {
+    li {
+      a:hover {
+        color: $color;
+      }
+    }
+  }
+
+  //header
+  .navbar-brand {
+    .dot {
+      background-color: $color;
+    }
+  }
+
+  .h-header {
+    .nav {
+      li {
+        a.active {
+          i {
+            color: $color;
+          }
+        }
+      }
+    }
+  }
+
+  .h-header-2 {
+    .navbar-nav {
+      .nav-link {
+        &:hover,
+        &.active {
+          color: $color;
+        }
+        &:after {
+          background-color: $color;
+        }
+      }
+    }
+    &.sticky-header {
+      &.navbar-light {
+        .navbar-nav {
+          .nav-link.active {
+            color: $color;
+          }
+        }
+      }
+    }
+  }
+
+  .v-header {
+    .profile-img {
+      img {
+        border-color: $color;
+        object-fit: cover;
+      }
+    }
+  }
+  .v-header-2 {
+    .nav {
+      a.active {
+        i {
+          color: $color;
+        }
+      }
+    }
+  }
+
+  //home
+  .home-profile {
+    .profile-image {
+      img {
+        border-color: rgba($color, 0.3);
+      }
+    }
+  }
+  .profile-info {
+    h6 {
+      span {
+        background-color: $color;
+      }
+    }
+  }
+
+  //education and experience
+  .timeline {
+    li {
+      &:before {
+        background-color: $color;
+        border-color: $color;
+      }
+      &:first-child {
+        i {
+          background-color: $color;
+        }
+      }
+      span {
+        color: $color;
+      }
+
+      &.active {
+        &:after {
+          border-color: rgba($color, 0.6);
+        }
+      }
+    }
+  }
+
+  .timeline-2 {
+    li {
+      &:first-child:before {
+        background-color: $color;
+        border-color: $color;
+      }
+    }
+  }
+
+  //skills
+  .skill-list {
+    .progress {
+      .percentage {
+        background-color: $color;
+      }
+    }
+  }
+
+  //portfolio
+  .work-nav {
+    li {
+      &.filtr-active {
+        color: $color;
+      }
+    }
+  }
+
+  .work-grid-box-1,
+  .work-grid-box-3 {
+    .grid-content {
+      background: rgba($color, 0.9);
+    }
+  }
+
+  //contact us
+  .contact-list {
+    li {
+      i {
+        color: $color;
+        background-color: rgba($color, 0.1);
+      }
+    }
+  }
+
+  //blog
+  .blog-box {
+    .category {
+      color: $color;
+    }
+  }
+
+  //blog sidebar
+  .blog-sidebar {
+    .category {
+      li {
+        a:hover {
+          color: $color;
+        }
+      }
+    }
+  }
+
+  //blog comments
+  .comment {
+    .author-info {
+      .job {
+        color: $color;
+      }
+    }
+  }
+
+  .comment-content {
+    .text {
+      a {
+        color: $color;
+      }
+    }
+  }
+
+  //blog navigation
+  .blog-navigation li {
+    &:first-child {
+      background: $color;
+    }
+  }
+
+  //theme dark
+  .theme-dark {
+    .socials-icons {
+      &.socials-grey {
+        a:hover {
+          border-color: $color;
+          color: $color;
+        }
+      }
+    }
+  }
+  @media print {
+    .theme-bg {
+      background-color: $color;
+    }
+  }
+}

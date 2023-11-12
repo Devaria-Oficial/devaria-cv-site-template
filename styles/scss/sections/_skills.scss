@@ -1,0 +1,51 @@
+.skill-list {
+  li {
+    list-style: none;
+    margin-bottom: 24px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  h6 {
+    font-size: 14px;
+    line-height: $body-lh;
+  }
+  .progress {
+    height: 8px;
+    border-radius: 50px;
+    
+    @include theme-map() {
+      background-color: map-get($list, 'progress-bg');
+    }
+  }
+  .progress-md {
+    height: 24px;
+  }
+  .progress-bar {
+    width: 0;
+    border-radius: 50px;
+  }
+  .progress-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $white;
+    font-weight: 500;
+    padding: 0 15px;
+  }
+}
+
+.skills-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  .card {
+    margin-right: 15px;
+    margin-bottom: 15px;
+    @include box-shadow(0 2px 4px rgba($black, 0.1));
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

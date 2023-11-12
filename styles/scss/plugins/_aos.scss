@@ -1,0 +1,7 @@
+@import '~aos/src/sass/aos.scss';
+@media (max-width: 1024px){
+  [data-aos^=fade] {
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+}

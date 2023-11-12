@@ -1,0 +1,109 @@
+//comment area
+
+.comment-area,
+.reply-form-container {
+  padding-left: 30px;
+  padding-right: 30px;
+  @include media-breakpoint-down(md) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.blog-comment {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  @include theme-map() {
+    border-bottom: 1px solid map-get($list, "border-color");
+  }
+  &:first-child {
+    padding-top: 0;
+  }
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .comment-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .btn {
+      line-height: $body-lh;
+    }
+  }
+}
+
+//detail css
+.quote-wrapper {
+  padding: 30px;
+  font-size: px-rem-converter(16px);
+  @include media-breakpoint-down(md) {
+    padding: 30px 15px;
+  }
+  .quotes {
+    @include theme-map() {
+      border-left: 5px solid map-get($list, "border-color");
+    }
+    padding: 15px;
+  }
+}
+
+
+.blog-details {
+  .blog-meta {
+    li {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+  .blog-image {
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
+  .blog-date {
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100px;
+    @include position(absolute, null, null, 0, 30px, 1);
+    @include transform(translateY(50%));
+  }
+  .blog-body {
+    padding: 85px 30px 30px;
+    @include media-breakpoint-down(md) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  .blog-meta {
+    display: flex;
+  }
+  .blog-footer {
+    padding-left: 30px;
+    padding-right: 30px;
+    @include media-breakpoint-down(md) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  .blog-share {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .navigate-post-container {
+    padding-left: 30px;
+    padding-right: 30px;
+    @include media-breakpoint-down(md) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}

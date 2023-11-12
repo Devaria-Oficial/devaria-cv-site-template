@@ -1,0 +1,75 @@
+.btn {
+  font-weight: 500;
+  border: 0;
+  padding: 0px 30px;
+  line-height: 48px;
+  border-radius: 50px;
+  color: $white;
+  &:focus,
+  &:hover,
+  &:active,
+  &:focus:active {
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.btn-sm {
+  line-height: 34px;
+  padding: 0 15px;
+  font-size: 12px;
+}
+@include theme-map-no-selector() {
+  $theme-colors: map-get($list, "theme-colors");
+
+  @each $key, $value in $theme-colors {
+    .btn-#{$key} {
+      color: $white !important;
+      background: $value;
+      border-color: $value;
+      &:focus,
+      &:hover,
+      &:active,
+      &:focus:active {
+        color: $white !important;
+        background: $value;
+        border-color: $value;
+      }
+    }
+    .btn-outline-#{$key} {
+      color: $value;
+      @include border(null, 1px, solid, $value);
+    }
+    .btn-soft-#{$key} {
+      background: rgba($value, 0.2);
+      border-color: rgba($value, 0.2);
+      color: $value;
+      &:focus,
+      &:hover,
+      &:active,
+      &:focus:active {
+        color: $white;
+        background: $value;
+        border-color: $value;
+      }
+    }
+  }
+}
+
+.btn-white {
+  background-color: $white;
+  border-color: $white;
+  color: $dark-dark;
+}
+
+.btn-link {
+  text-decoration: none;
+  @include theme-map() {
+    color: map-get($list, "default");
+  }
+  &:hover {
+    @include theme-map() {
+      color: map-get($list, "default");
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.layout-minimal {
+  .wrapper {
+    padding-top: 30px;
+    padding-bottom: 0;
+    @include media-breakpoint-up(md) {
+      margin-top: 78px;
+    }
+  }
+  .right-section {
+    padding-left: 285px;
+    @include media-breakpoint-down(lg) {
+      padding-left: 0;
+    }
+  }
+  .content {
+    padding: 50px 30px;
+    @include media-breakpoint-down(md) {
+      padding: 30px 15px;
+    }
+  }
+  .print-section { 
+    @include media-breakpoint-up(md) {
+      @include position(fixed, 0, 0, null, 0, 5);
+      @media print {
+        position: static;
+      }
+    }
+  }
+  .profile-box-2 { 
+    @include media-breakpoint-up(lg) {
+      @include position(fixed, 108px, null, 0, null);
+      max-width: 285px;
+      @media print {
+        position: static;
+      }
+    }
+  }
+}

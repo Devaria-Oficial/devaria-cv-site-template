@@ -1,0 +1,43 @@
+/*
+Template Name: Mono CV - Portfolio & Resume Template
+Author: Lettstart Design
+Version: 1.0.0
+Website: https://lettstartdesign.com/
+File: Bootstrap File
+
+====== TABLES OF CSS =======
+
+1. Bootstrap functions
+2. Bootstrap variables
+3. App variables
+4. App mixins
+5. Bootstrap SCSS
+6. App functions
+7. Components
+  a. Buttons
+  b. Breadcrumbs
+  c. Badges
+  d. Form
+  e. Pagination
+  f. Text
+  e. Backgrounds
+*/
+
+//bootstrap utils
+@import 'bootstrap/scss/functions';
+@import 'variables-bootstrap';
+//app utils
+@import 'variables';
+@import 'mixins';
+//bootstrap scss
+@import 'bootstrap/scss/bootstrap';
+//app utils
+@import 'functions';
+//components
+@import 'components/button';
+@import 'components/breadcrumbs';
+@import 'components/badge';
+@import 'components/forms';
+@import 'components/pagination';
+@import 'components/text';
+@import 'components/backgrounds';

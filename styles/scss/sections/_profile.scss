@@ -1,0 +1,68 @@
+
+.profile {
+  background: $white;
+  width: 100%;
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  .profile-image {
+    width: 75%;
+    margin: 0 auto 30px;
+  }
+  
+  .profile-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  .text {
+    margin-bottom: 8px
+  }
+}
+
+.profile-name {
+  .name {
+    text-transform: uppercase;
+    margin-bottom: 10px
+  }
+}
+
+.profile-box-2 {
+  padding: 30px;
+  text-align: center;
+  @include theme-map() {
+    background-color: map-get($list, "header-bg");
+  }
+  display: flex;
+  flex-direction: column;
+  @include media-breakpoint-up(md){
+    min-height: 550px;
+  }
+  @include media-breakpoint-down(md){
+    margin-top: 30px;
+  }
+  .profile-image {
+    text-align: center;  
+    margin-bottom: 15px;
+  }
+  .name {
+    color: rgba($white, 0.6);
+    font-size: 24px;
+  }
+  p {
+    color: rgba($white, 0.6);
+  }
+  .profile-image {
+    img{
+      width: 100px;
+    }
+  }
+  .contact-detail {
+    color: rgba($white, 0.6);
+  }
+  .cd-headline {
+    font-size: 15px;
+  }
+}

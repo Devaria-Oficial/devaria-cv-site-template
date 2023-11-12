@@ -1,0 +1,38 @@
+.pswp-caption {
+  display: none
+}
+
+.pswp__caption__center {
+  text-align: center;
+  margin-top: 15px;
+  & > * {
+    color: $white;
+    margin-bottom: 15px;
+  }
+}
+
+.pswp__img {
+  border-radius: 8px;
+}
+
+.pswp__button{
+  width: 50px !important;
+  height: 50px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: rgba($white, 0.2) !important;
+  }
+  &.pswp__button--arrow {
+    margin-top: 0;
+    @include transform(translateY(-50%));
+    background-color: rgba($white, 0.1);
+  }
+}
+
+.pswp--zoomed-in {
+  .bx-zoom-in:before {
+    content: "\ec91";
+  }
+}

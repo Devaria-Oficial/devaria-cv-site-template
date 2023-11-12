@@ -1,0 +1,39 @@
+.swiper {
+	.swiper-btn-container {
+		& > * {
+			@include position(absolute, 0, null, 0, null);
+			margin: auto 0;
+			width: 50px;
+			height: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: rgba($white, 0.6) !important;
+			color: $black;
+			padding: 0;
+			border-radius: 0;
+			&:after {
+				display: none;
+			}
+			i {
+				margin-bottom: 0;
+				font-weight: 400;
+				font-size: 1.5rem;
+			}
+		}
+		.swiper-button-prev {
+			left: 0;
+		}
+		.swiper-button-next {
+			right: 0;
+		}
+	}
+}
+
+.circle-nav {
+	.swiper-btn-container{
+		& > * {
+			border-radius: 100%;
+		}
+	}
+}

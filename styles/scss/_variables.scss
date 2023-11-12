@@ -1,0 +1,189 @@
+$white: #fff;
+$black: #000;
+$gray-100: #efefef;
+$gray-200: #d2d2d2;
+$gray-300: #ccc;
+$gray-400: #adb5bd;
+$gray-500: #6c757d;
+$gray-600: #7f7e8f;
+$gray-700: #4b4b5a;
+$gray-800: #343a40;
+$gray-900: #1e1e1e;
+$red-100: #ffe9ea;
+// stylelint-disable-next-line scss/dollar-variable-default
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900,
+);
+
+$blue: #425cbb !default;
+$pink: #f05492 !default;
+$red: #ef4d56 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc835 !default;
+$green: #69c380 !default;
+$teal: #9cf27f !default;
+$cyan: #0dcaf0 !default;
+$colors: ();
+$colors:  map-merge((
+  "blue": $blue,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,
+  "white": white,
+  "gray": $gray-600,
+  "gray-dark": $gray-800,
+  "facebook": "#2b55cc",
+  "twitter": "#4ac7ec",
+  "dribble": $pink,
+), $colors);
+
+$primary: #00bcd4;
+$secondary: #7081b9;
+$success: $green;
+$info: #304CFD;//#377dff;
+$warning: $yellow;
+$danger: $red;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: ();
+$theme-colors:  map-merge((
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "orange": $orange,
+  "teal": $teal,
+  "blue": $blue,
+  "facebook": #2b55cc,
+  "twitter": #4ac7ec,
+  "dribble": $pink,
+), $theme-colors);
+
+
+$input-focus-border-color: $red;
+
+//fonts variab,es
+$font-primary: "Poppins", sans-serif;
+$font-secondary: "Poppins", sans-serif;
+$icon-family: "boxicons";
+//body variables
+$body-font-size: 16px;
+$body-lh: 1.75;
+
+//common variables
+$box-shadow: 0px 4px 20px rgba(191, 197, 213, 0.2);
+$image-path: "../../../public/images";
+
+//header variables
+$navbar-link-color: #fff;
+//section variables
+$testi-box-shadow: 0 0 12px 0 rgba(4, 6, 4, 0.08);
+$blog-box-shadow: 0 0 24px 0 rgba(4, 6, 4, 0.08);
+$blog-hvr-box-shadow: 0 0 8px 0 rgba(4, 6, 4, 0.08);
+$pfx: "theme";
+$dark-light: #17171c;
+$dark-dark: #121216;
+$light-light: #f9fbfd;
+$light-dark: $gray-900;
+$theme-list: (
+  light: (
+    default: #03004e,
+    colors:
+      map-merge(
+        (
+          "default": #03004e,
+        ),
+        $colors
+      ),
+    light: $light-light,
+    dark: $light-dark,
+    // stylelint-disable-next-line scss/dollar-variable-default
+    theme-colors:
+      map-merge(
+        (
+          "light": $light-light,
+          "dark": $light-dark,
+          "default": #03004e,
+        ),
+        $theme-colors
+      ),
+    input-border-color: #eaeaea,
+    body-bg: white,
+    //common variables
+    border-color: #e9e9e9,
+    box-content-inner-bg: $light-light,
+    setting-bg: white,
+    divider-stroke: rgba(black, 0.1),
+    //header variables
+    heading-color: #03004e,
+    header-bg: #2a2d35,
+    horizontal-header-sticky-bg: white,
+
+    //footer variables
+    footer-bg: #111,
+    footer-color: rgba(white, 0.8),
+    progress-bg: darken($light-light, 2),
+    //resume
+    active-history-color: $white,
+    //setting
+    setting-dropdown-bg: $white
+  ),
+  dark: (
+    default: #d4dbe5,
+    colors:
+      map-merge(
+        (
+          "default": #d4dbe5,
+        ),
+        $colors
+      ),
+    light: $dark-light,
+    dark: $dark-dark,
+    // stylelint-disable-next-line scss/dollar-variable-default
+    theme-colors:
+      map-merge(
+        (
+          "light": $dark-light,
+          "dark": $dark-dark,
+          "default": #d4dbe5,
+        ),
+        $theme-colors
+      ),
+    input-border-color: #303e67,
+    // font variables
+    //body variables
+    body-bg: $dark-dark,
+    //common variables
+    border-color: #333,
+    box-content-inner-bg: #14141a,
+    setting-bg: $dark-light,
+    divider-stroke: rgba(white, 0.1),
+    //header variables
+    heading-color: #fff,
+    header-bg: #1e1e26,
+    horizontal-header-sticky-bg: #1e1e26,
+    //section variables
+    home-bg: #013c32,
+    //footer variables
+    footer-bg: #000,
+    footer-color: rgba(black, 0.8),
+    progress-bg: darken($gray-800, 5),
+    //resume
+    active-history-color: $dark-light,
+    //setting
+    setting-dropdown-bg: $dark-light
+  ),
+);

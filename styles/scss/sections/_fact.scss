@@ -1,0 +1,12 @@
+
+.fact {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  i {
+    font-size: 32px;
+    color: $white;
+    border-radius: 100%;
+  }
+}

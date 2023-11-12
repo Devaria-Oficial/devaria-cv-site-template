@@ -1,0 +1,102 @@
+.banner {
+  min-height: 100vh;
+  position: relative;
+  background-image: url("#{$image-path}/bg.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  @include media-breakpoint-down(md) {
+    padding: 50px;
+    background-size: 50%;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 0;
+    display: flex;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    @include media-breakpoint-down(lg) {
+      font-size: 3rem;
+    }
+    @include media-breakpoint-down(md) {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.banner-2 {
+  background-image: none;
+  padding-top: 130px;
+  padding-bottom: 0;
+  @include media-breakpoint-down(lg) {
+    padding-top: 180px;
+  }
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    @include media-breakpoint-down(lg) {
+      font-size: 3rem;
+    }
+    @include media-breakpoint-down(md) {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.home-profile {
+  .profile-image {
+    img {
+      border: 20px solid rgba($teal, 0.4);
+      border-radius: 100%;
+      width: 400px;
+    }
+  }
+}
+
+.profile-info {
+  h6 {
+    span {
+      background-color: $teal;
+      font-size: 14px;
+      line-height: 24px;
+      letter-spacing: 1px;
+      font-weight: bold;
+      padding: 10px 30px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 0px;
+    }
+  }
+  
+}
+
+//banner 6
+.home-profile-banner {
+  padding: 180px 0 100px;
+}
+
+//inner page banner
+.inner-banner {
+  overflow: hidden;
+  & > .container {
+    position: relative;
+    padding-top: 180px;
+    padding-bottom: 100px;
+    &:after {
+      background: url("#{$image-path}/dots-bg.png") no-repeat;
+      content: '';
+      width: 250px;
+      height: 250px;
+      display: block;
+      @include position(absolute, null, 0, -150px, null);
+    }
+  }
+}
+

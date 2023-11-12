@@ -1,0 +1,149 @@
+/*
+Template Name: Mono CV - Portfolio & Resume Template
+Author: Lettstart Design
+Version: 1.0.0
+Website: https://lettstartdesign.com/
+File: Bootstrap File
+
+====== TABLES OF CSS =======
+1. Bootstrap functions
+2. Bootstrap variables
+3. Bootstrap mixins
+4. App variables
+5. App mixins
+6. App functions
+7. Demo CSS
+*/
+
+//bootstrap utils
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+//app utils
+@import "variables";
+@import "mixins";
+@import "functions";
+.demo,
+.demo .settings {
+  box-shadow: $box-shadow;
+  @include theme-map() {
+    background-color: map-get($list, "setting-bg");
+  }
+  text-align: center;
+}
+.demo {
+  @include position(fixed, 160px, -200px, null, null, 10);
+  width: 200px;
+  padding: 10px 15px;
+  @include transition(all 0.3s);
+  border-bottom-left-radius: 8px;
+  @include media-breakpoint-between(sm, md){
+    top: 50px;
+    .demo-content {
+      max-height: 250px;
+      overflow-y: auto;
+    }
+  }
+  &.active {
+    right: 0;
+  }
+  h5 {
+    font-size: 14px;
+    font-weight: 600;
+    @include theme-map() {
+      border-bottom: 1px solid map-get($list, "border-color");
+    }
+    @include theme-map() {
+      color: map-get($list, "default");
+    }
+    letter-spacing: 0;
+    line-height: 33px;
+    height: 40px;
+    margin-bottom: 12px;
+  }
+  .settings {
+    @include position(absolute, 0, null, null, -50px);
+    padding: 15px 0;
+    font-size: px-rem-converter(20px);
+    line-height: 1;
+    width: 50px;
+    height: 50px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .reset {
+    margin-bottom: 13px;
+  }
+  .background,
+  .color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 6px;
+  }
+  .background {
+    background-repeat: no-repeat;
+  }
+  .change-theme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & > a {
+      padding: 8px;
+      border-radius: 100%;
+      line-height: 1;
+      width: 36px;
+      height: 36px;
+    }
+    .active {
+      @include theme-map() {
+        background-color: darken(map-get($list, "light"), 5);
+      }
+    }
+  }
+  .setting-dropdown {
+    .dropdown-toggle {
+      border-radius: 4px;
+      @include theme-map() {
+        border: 1px solid map-get($list, "border-color");
+      }
+      width: 100%;
+      padding: 4px 8px;
+      line-height: 1.75;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: px-rem-converter(14px);
+    }
+    .dropdown-menu {
+      padding: 0;
+      width: 100%;
+      max-height: 200px;
+      overflow-y: auto;
+      @include theme-map() {
+        background-color: map-get($list, "setting-dropdown-bg");
+        border-color: map-get($list, "border-color");
+      }
+      li {
+        @include theme-map() {
+          border-bottom: 1px solid map-get($list, "border-color");
+        }
+        font-size: px-rem-converter(14px);
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+      .dropdown-item {
+        padding: 4px 8px;
+        @include theme-map() {
+          color: map-get($list, "default");
+        }
+        &:hover, &:focus {
+          @include theme-map() {
+            background-color: map-get($list, "light");
+          }
+        }
+      }
+    }
+  }
+}

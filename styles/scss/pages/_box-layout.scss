@@ -1,0 +1,40 @@
+.box-layout {
+  .h-header {
+    margin-bottom: 15px;
+  }
+  footer {
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+  .tab-container {
+    position: relative;
+    @include media-breakpoint-up(md) {
+      height: calc(100vh - 175px);
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    @include media-breakpoint-up(xl) {
+      overflow-y: hidden;
+    }
+    .scroll-content {
+      padding: 0 30px 80px 0;
+    }
+    & > * {
+      height: 100%;
+    }
+  }
+  .profile {
+    position: relative;
+    display: block;
+    padding: 0;
+    .scroll-content {
+      padding: 50px 30px;
+    }
+    @include media-breakpoint-up(md) {
+      height: calc(100vh - 175px);
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+}

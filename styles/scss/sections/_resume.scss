@@ -1,0 +1,111 @@
+.timeline {
+  margin-left: 10px;
+  .timeline-title {
+    font-size: 20px;
+    margin-left: 25px;
+    line-height: 30px;
+  }
+  .timeline-head {
+    display: flex;
+    flex-direction: column;
+  }
+  li {
+    @include theme-map() {
+      border-left: 2px solid map-get($list, "border-color");
+    }
+    list-style: none;
+    padding: 0 0 30px 30px;
+    position: relative;
+    &:before {
+      content: "";
+      border: solid 2px;
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      @include position(absolute, 6px, null, null, -5px, 1);
+      display: block;
+    }
+    &.active {
+      &:after {
+        content: "";
+        border: solid 2px;
+        width: 16px;
+        height: 16px;
+        border-radius: 100%;
+        @include theme-map(){
+          background: map-get($list, 'active-history-color');
+        }
+        @include position(absolute, 2px, null, null, -9px, 0);
+        display: block;
+      }
+    }
+    .line-title {
+      font-size: 16px;
+      line-height: 6px;
+    }
+    .section-title {
+      padding-left: 20px;
+    }
+    span {
+      font-size: 13px;
+      padding-bottom: 15px;
+      display: block;
+    }
+    &:first-child {
+      padding: 0 0 60px 19px;
+      &:before {
+        border: 0;
+        background: 0 0;
+        position: relative;
+      }
+      i {
+        float: left;
+        border-radius: 100%;
+        margin: -13px -48px;
+        color: $white;
+        width: 56px;
+        height: 56px;
+        line-height: 56px;
+        text-align: center;
+        font-size: px-rem-converter(24px);
+      }
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.timeline-head {
+  margin-bottom: 30px;
+  i {
+    font-size: 32px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  .timeline-title {
+    margin-left: 0;
+  }
+}
+
+.box-timeline {
+  li {
+    padding: 30px;
+    box-shadow: $box-shadow;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @media print {
+      page-break-inside: avoid;
+      page-break-after:auto;
+      @page {
+        margin-top: 100px;
+      }
+    }
+    @include media-breakpoint-down(md) {
+      padding: 15px;
+    }
+  }
+}

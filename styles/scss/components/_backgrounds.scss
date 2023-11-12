@@ -1,0 +1,15 @@
+@include theme-map-no-selector() {
+  $theme-colors: map-get($list, "theme-colors");
+  @each $key, $val in $theme-colors {
+    .bg-soft-#{$key} {
+      background-color: rgba($val, 0.1);
+    }
+    .bg-#{$key} {
+      background-color: $val !important;
+    }
+  }
+}
+
+.bg-gray-100 {
+  background-color: $gray-100 !important;
+}

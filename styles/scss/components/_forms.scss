@@ -1,0 +1,39 @@
+.form-group{
+  margin-bottom: 30px;
+  label {
+    margin-bottom: 8px;
+  }
+}
+
+.form-control, textarea.form-control {
+  width: 100%;
+  @include theme-map() {
+    border-color: map-get($list, "input-border-color");
+  }
+  font-size: px-rem-converter(14px);
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.form-control {
+  height: 48px;
+  color: $black;
+  padding-left: 10px;
+  outline: 0;
+}
+
+textarea.form-control {
+  padding: 20px 0 0 10px;
+  min-height: 100px;
+}
+
+.is-invalid {
+  .invalid-feedback {
+    display: block;
+  }
+  .form-control,
+  textarea.form-control {
+    border-color: $danger;
+  }
+}

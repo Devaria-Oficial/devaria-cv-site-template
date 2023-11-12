@@ -1,0 +1,36 @@
+
+
+footer {
+  @include theme-map() {
+    background: map-get($list, "footer-bg");
+  }
+  min-height: 70px;
+  color: rgba($white, 0.8);
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  font-size: px-rem-converter(13px);
+  @include media-breakpoint-up(md) {
+    padding: 30px;
+  }
+  @include media-breakpoint-down(sm){
+    flex-direction: column;
+    padding: 15px 0;
+  }
+}
+
+.footer-2 {
+  padding: 30px 15px 0 115px;
+  @include media-breakpoint-down(md) {
+    padding-left: 15px;
+  }
+}
+
+.footer-print {
+  padding: 0 15px;
+  background-color: transparent;
+  @include media-breakpoint-down(md) {
+    padding: 15px 0;
+    text-align: center;
+  }
+}

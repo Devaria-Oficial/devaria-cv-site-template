@@ -1,0 +1,95 @@
+/*
+Template Name: Mono CV - Portfolio & Resume Template
+Author: Lettstart Design
+Version: 1.0.0
+Website: https://lettstartdesign.com/
+File: Bootstrap File
+
+====== TABLES OF CSS =======
+
+1. Fonts
+2. Bootstrap functions
+3. Bootstrap variables
+4. Bootstrap mixins
+5. App functions
+6. App variables
+7. App mixins
+8. General/Common
+  a. Reset
+  b. Spacing
+  c. Common
+  d. Preloader
+7. Plugin Resets
+  a. Owl Carousel
+  b. Photoswipe
+8. Headers 
+  a. Vertical Header
+  b. Horizontal Header
+9. Footer
+10. Sections
+  a. Home
+  b. About or Profile
+  c. Service
+  d. Facts
+  e. Resume
+  f. Skills
+  g. Portfolio
+  h. Testimonials
+  i. Contact US
+  j. Blog
+  k. CTA
+  l. Blog Sidebar
+11. Pages
+  a. Blog Details
+  b. Vertical Layout 1
+  c. Vertical Layout 2
+  d. Minimal Layout
+12. Print
+*/
+
+//fonts
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+//bootstrap utils
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+//app utils
+@import 'functions';
+@import 'variables';
+@import 'mixins';
+//general or common
+@import 'general/reset';
+@import 'general/spacing';
+@import 'general/common';
+@import 'general/preloader';
+//plugin resets
+@import 'plugins/swiper';
+@import 'plugins/photoswipe';
+@import 'plugins/aos';
+@import 'plugins/typewriter';
+//header or navbars
+@import 'general/vertical-navbar';
+@import 'general/horizontal-navbar';
+//footer
+@import 'general/footer';
+//sections
+@import 'sections/home';
+@import 'sections/profile';
+@import 'sections/service';
+@import 'sections/fact';
+@import 'sections/resume';
+@import 'sections/skills';
+@import 'sections/portfolio';
+@import 'sections/testimonial';
+@import 'sections/contact';
+@import 'sections/blog';
+@import 'sections/cta';
+@import 'sections/blog-sidebar';
+//pages
+@import 'pages/blog-detail';
+@import 'pages/vertial-layout';
+@import 'pages/vertial-layout2';
+@import 'pages/minimal-layout';
+//print
+@import 'print';
+@import 'dark';

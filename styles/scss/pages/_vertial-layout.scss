@@ -1,0 +1,20 @@
+.vertical-layout {
+  .content {
+    flex: 1;
+    padding: 0 0 0 250px;
+  }
+  footer {
+    margin-left: 250px;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .vertical-layout {
+    .content {
+      padding: 0;
+    }
+    footer {
+      margin: 0;
+    }
+  }
+}

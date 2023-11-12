@@ -1,0 +1,70 @@
+
+@for $i from 1 to 5 {
+  .mt-#{$i*15}, .my-#{$i*15} {
+    margin-top: $i*15px;
+  }
+
+  .mb-#{$i*15}, .my-#{$i*15} {
+    margin-bottom: $i*15px;
+  }
+  
+  .me-#{$i*15} {
+    margin-right: $i*15px;
+  }
+
+  .ms-#{$i*15} {
+    margin-left: $i*15px;
+  }
+
+  .pt-#{$i*15}, .py-#{$i*15} {
+    padding-top: $i*15px;
+  }
+
+  .pb-#{$i*15}, .py-#{$i*15} {
+    padding-bottom: $i*15px;
+  }
+  
+  .pe-#{$i*15}, .px-#{$i*15} {
+    padding-right: $i*15px;
+  }
+
+  .ps-#{$i*15}, .px-#{$i*15} {
+    padding-left: $i*15px;
+  }
+  .p-#{$i*15}{
+    padding: $i*15px;
+  }
+}
+.p-md-30{
+  @include media-breakpoint-up(md) {
+    padding: 30px;
+  }
+}
+
+.pb-20 {
+  padding-bottom: 20px;
+}
+
+.pb-50, .py-50 {
+  padding-bottom: 50px
+}
+
+.pt-50, .py-50 {
+  padding-top: 50px
+}
+
+.pb-70, .py-70 {
+  padding-bottom: 70px
+}
+
+.pb-80, .py-80 {
+  padding-bottom: 80px
+}
+
+.pt-80, .py-80 {
+  padding-top: 80px
+}
+
+.pt-100, .py-100 {
+  padding-top: 100px
+}

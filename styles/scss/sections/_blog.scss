@@ -1,0 +1,23 @@
+
+.blog-box {
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  @include box-shadow($box-shadow); 
+  @include transition(all ease .3s);
+  .blog-body {
+    padding: 30px;
+  }
+  .blog-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  h5 {
+    a:hover {
+      @include theme-map() {
+        color: map-get($list, "heading-color");
+      }
+    }
+  }
+}

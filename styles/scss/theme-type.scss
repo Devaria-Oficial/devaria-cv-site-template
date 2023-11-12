@@ -1,0 +1,23 @@
+@import "variables";
+@import "color-mixins";
+
+$theme-types: (
+  blue:  $blue, 
+  green: $green, 
+  grey: $gray-500, 
+  info: $info,
+  orange: $orange, 
+  pink: $pink, 
+  primary: $primary, 
+  red: $red, 
+  secondary: $secondary, 
+  teal: $teal, 
+  torquoise: $cyan, 
+  yellow: $yellow
+);
+@each $type, $color in $theme-types {
+  .theme-type-#{$type} {
+    @include change-theme($color);
+  }
+}
+

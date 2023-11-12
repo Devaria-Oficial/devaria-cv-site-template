@@ -1,0 +1,42 @@
+
+
+.contact-map {
+  width: 100%;
+  height: 350px;
+  margin-bottom: 40px;
+  iframe {
+    display: block;
+    width: 100%;
+    height: 100%
+  }
+}
+
+
+.contact-list {
+  li {
+    display: flex;
+    padding: 8px 0;
+    i {
+      margin-right: 15px;
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+    }
+    span {
+      align-self: center;
+    }
+  }
+}
+
+.contact-form {
+  padding: 45px;
+  @include media-breakpoint-down(lg) {
+    padding: 30px;
+  }
+  @include media-breakpoint-down(md) {
+    padding: 15px;
+  }
+}

@@ -1,0 +1,28 @@
+.cta {
+  .form-control {
+    height: 60px;
+    padding-left: 15px;
+    padding-right: 185px;
+    &:focus {
+      border-color: $input-border-color;
+    }
+  }
+  button {
+    @include position(absolute, 4px, 4px, 4px, null);
+  }
+}
+.cta-wrapper {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  &:after {
+    background: url("#{$image-path}/dots-bg.png") no-repeat;
+    content: '';
+    width: 250px;
+    height: 250px;
+    display: block;
+    @include position(absolute, 0, 0, 0, null, -1);
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}

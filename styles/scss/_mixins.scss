@@ -1,0 +1,166 @@
+// set position through css params
+@mixin position($pos, $top:null, $right:null, $bottom:null, $left:null, $index:null) {
+    position: $pos;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+    z-index: $index
+}
+
+// set borders through css params
+@mixin border($direction, $width, $style, $color) {
+    @if($direction==left) {
+        border-left: $width $style $color;
+    }
+    @else if($direction==right) {
+        border-right: $width $style $color;
+    }
+    @else if($direction==top) {
+        border-top: $width $style $color;
+    }
+    @else if($direction==bottom) {
+        border-bottom: $width $style $color;
+    }
+    @else {
+        border: $width $style $color;
+    }
+}
+
+// display flex default mixin
+@mixin display-flex {
+    display: flex;
+    -webkit-display: flex;
+}
+
+// set align text through css params
+@mixin text-align($param) {
+    text-align: $param
+}
+
+// set font weights through css params
+@mixin font-weight($weight) {
+    font-weight: $weight;
+}
+
+// set text-transform through css params
+@mixin text-transform($fontCase) {
+    text-transform: $fontCase;
+}
+
+// set transform properties through css params
+@mixin transform($property) {
+    transform: $property;
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    -moz-transform: $property;
+}
+
+// set transitions through css params
+@mixin transition($val) {
+    transition: $val;
+    -webkit-transition: $val;
+    -ms-transition: $val;
+    -moz-transition: $val;
+}
+
+// set keyframes properties of css through params
+@mixin keyframes($animationName, $animationDuration) {
+    animation-name: $animationName;
+    -webkit-animation-name: $animationName;
+    animation-duration: $animationDuration;
+    -webkit-animation-duration: $animationDuration;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+}
+
+// set calc using css properties
+@mixin setcalcproperty($type, $totalWidth, $width) {
+    #{$type}:calc(#{$totalWidth} - #{$width});
+}
+
+// set border radius through css params
+@mixin border-radius($radius) {
+    border-radius: $radius;
+}
+
+@mixin perspective($val) {
+    -webkit-perspective: $val;
+    -moz-perspective: $val;
+    -ms-perspective: $val;
+    perspective: $val;
+}
+
+
+@mixin backface-visibility($val) {
+    -webkit-backface-visibility: $val;
+    backface-visibility: $val;
+}
+
+@mixin gred{
+    background: $gred-overlay;
+}
+
+@mixin text-gred{
+    background-image:  $gred-overlay;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+@mixin  d-flex {
+    display: flex;
+    align-items: center;
+}
+
+//fackback mixin for border-radius
+@mixin border-radius($radius: $border-radius, $fallback-border-radius: false) {
+    @if $enable-rounded {
+      border-radius: $radius;
+    }
+    @else if $fallback-border-radius != false {
+      border-radius: $fallback-border-radius;
+    }
+}
+
+@mixin box-shadow ($shadow: $box-shadow){
+    box-shadow: $shadow;
+}
+
+@mixin theme-map(){
+    $current-selector: &;
+    @each $theme, $map in $theme-list {
+        @if($theme == 'light') {
+            $list: map-get($theme-list , $theme) !global;
+            @content;
+            $list: null !global;
+        }
+        @else {
+            @at-root .#{$pfx}-#{$theme} {
+                #{$current-selector} {
+                    $list: map-get($theme-list, $theme) !global;
+                    @content;
+                    $list: null !global;
+                }
+            }
+        }
+    }
+}
+
+
+@mixin theme-map-no-selector(){
+    $current-selector: &;
+    @each $theme, $map in $theme-list {
+        @if($theme == 'light') {
+            $list: map-get($theme-list , $theme) !global;
+            @content;
+            $list: null !global;
+        }
+        @else {
+            @at-root .#{$pfx}-#{$theme} {
+                $list: map-get($theme-list, $theme) !global;
+                @content;
+                $list: null !global;
+            }
+        }
+    }
+}

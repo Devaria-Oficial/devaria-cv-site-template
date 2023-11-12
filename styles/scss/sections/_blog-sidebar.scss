@@ -1,0 +1,101 @@
+.widget-search {
+  .input-group {
+    @include theme-map() {
+      border: 1px solid map-get($list, "input-border-color");
+    }
+    align-items: center;
+    border-radius: 0.25rem;
+    .form-control {
+      border: 0;
+    }
+    .input-group-btn {
+      padding-right: 0.75rem;
+    }
+    .btn {
+      padding: 0;
+      line-height: 1;
+    }
+  }
+}
+
+.widget {
+  .widget-title {
+    padding-bottom: 0.5rem;
+    @include border(bottom, 1px, solid, $gray-600);
+    @include theme-map() {
+      border-color: map-get($list, "gray-600");
+    }
+    margin-bottom: 30px;
+  }
+}
+
+.widget-category-list {
+  li {
+    padding: 0.5rem 0;
+    @include border(bottom, 1px, solid, $border-color);
+    @include theme-map() {
+      border-color: map-get($list, "border-color");
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+.widget-post {
+  .media {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .media-body {
+    p {
+      line-height: 1.5;
+    }
+  }
+}
+
+.widget-insta {
+  .insta-feeds {
+    align-items: center;
+    margin: 0 -7.5px;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      margin-bottom: 15px;
+      padding: 0 7.5px;
+      @include media-breakpoint-up(lg) {
+        width: 33.33%;
+        max-width: 33.33%;
+      }
+    }
+  }
+}
+
+.widget-tags {
+  li {
+    display: inline-block;
+    font-size: px-rem-converter(13px);
+    padding: 0.125rem 0.4375rem;
+    line-height: 1.5;
+    border: 2px solid $gray-600;
+    border-radius: 4px;
+    margin: 0 6px 4px 0;
+    a {
+      @include theme-map() {
+        color: map-get($list, "default");
+      }
+    }
+    @include media-breakpoint-down(md) {
+      font-size: px-rem-converter(13px);
+    }
+  }
+}

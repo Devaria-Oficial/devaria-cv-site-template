@@ -1,0 +1,39 @@
+
+.service {
+  padding: 30px;
+  margin-bottom: 30px;
+  @include transition(all .5s);
+  @include box-shadow($box-shadow);
+  position: relative; 
+  .icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    flex-shrink: 0;
+    font-size: px-rem-converter(32px);
+  }
+  h5 {
+    margin: 15px 0;
+  }
+  &:hover {
+    @include box-shadow($box-shadow); 
+  }
+}
+
+.service-2 {
+  display: flex;
+  .icon i {
+    font-size: 28px;
+    color: $primary;
+  }
+  .service-body {
+    flex: 1;
+  }
+  h5 {
+    margin-bottom: 10px;
+  }
+}

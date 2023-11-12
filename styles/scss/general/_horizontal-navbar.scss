@@ -1,0 +1,244 @@
+
+.h-header {
+  margin-bottom: 30px;
+  @include transition(all 0.3s);
+  .navbar-toggler {
+    @include media-breakpoint-up(md){
+      display: none
+    }
+  }
+  .navbar-collapse {
+    @include media-breakpoint-down(md){
+      @include transition(all 0.3s);
+      @include position(fixed, 30px, null, 15px, null, 8);
+      @include transform(translateX(-110%));
+      opacity: 0;
+      display: flex;
+      align-items: stretch;
+      &.active {
+        @include transform(translateX(0));
+        opacity: 1;
+      }
+    }
+  }
+  .nav {
+    height: 100px;
+    border-radius: 20px;
+    @include transition(all 0.3s);
+    @include media-breakpoint-down(md){
+      @include box-shadow($box-shadow);
+      height: auto;
+      flex-direction: unset;
+      width: 180px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 10px 0;
+    }
+    li {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: px-rem-converter(14px);
+      @include border(right, 1px, solid, rgba($white, .2));
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      @include media-breakpoint-down(md){
+        flex: auto;
+        width: 100%;
+        display: block;
+        border-right: 0;
+        @include border(bottom, 1px, solid, rgba($white, .2));
+      }
+      &:last-child {
+        border-right: none;
+        @include media-breakpoint-down(md){
+          border-bottom: none;
+        }
+      }
+      a {
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include media-breakpoint-down(md){
+          padding: 8px 15px;
+        }
+        i {
+          color: $gray-600;
+        }
+        .link-circle {
+          box-shadow: 0 4px 0 rgba($black, 0.2);
+        }
+        &:hover {
+          .link-circle {
+            box-shadow: 0 -4px 0 rgba($black, 0.2);
+          }
+        }
+        &.active {
+          color: $white;
+          .link-circle {
+            box-shadow: 0 -4px 0 rgba($black, 0.2);
+          }
+        }
+      }
+    }
+  }
+  &.sticky-header {
+    margin-bottom: 0;
+    @include media-breakpoint-up(md){
+      @include position(fixed, 15px, 0, null, 0, 9);
+      animation-name: slideInDown;
+      animation-duration: 0.75s;
+      animation-fill-mode: both;
+      .nav {
+        @include box-shadow($box-shadow);
+      }
+    }
+  }
+}
+
+.h-header-2 {
+  .navbar-brand {
+    font-weight: 700;
+    @include theme-map() {
+      color: map-get($list, "header-color");
+    }
+  }
+  .navbar-nav {
+    @include media-breakpoint-up(lg) {
+      > li {
+        & + li {
+          margin-left: 15px;
+        }
+
+        > a {
+          padding: 20px 15px !important;
+        }
+      }
+    }
+    @include media-breakpoint-down(lg) {
+      margin: 8px 0px;
+    }
+    .nav-link {
+      letter-spacing: 0.03em;
+      font-size: px-rem-converter(14px);
+      position: relative;
+      outline: none;
+      @include theme-map() {
+        color: map-get($list, "default");
+      }
+      &:focus {
+        @include theme-map() {
+          color: map-get($list, "default");
+        }
+      }
+      &:hover,
+      &.active {
+        opacity: 1;
+      }
+      @include media-breakpoint-up(lg) {
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          right: 10px;
+          border-radius: 4px;
+          height: 2px;
+          transition: all 0.4s;
+          transform: scaleX(0);
+          transform-origin: right;
+        }
+        &.active {
+          opacity: 1;
+          &:after {
+            transform: scaleX(1);
+          }
+        }
+      }
+      @include media-breakpoint-up(md) {
+        padding: 20px 15px;
+      }
+      @include media-breakpoint-down(lg) {
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+      }
+    }
+  }
+  .navbar-collapse {
+    @include media-breakpoint-down(lg) {
+      background: $white;
+      margin-top: 10px;
+    }
+  }
+
+  &.navbar-light {
+    .navbar-brand {
+      color: $white;
+    }
+    .navbar-nav {
+      .nav-link {
+        @include media-breakpoint-up(lg) {
+          color: $white;
+        }
+      }
+    }
+  }
+  &.sticky-header {
+    @include theme-map() {
+       background-color: map-get($list, "horizontal-header-sticky-bg");
+    }
+    width: 100%;
+    box-shadow: 0 2px 2px rgba($black, 0.1);
+    animation-name: slideInDown;
+    animation-duration: 0.75s;
+    animation-fill-mode: both;
+    &.navbar-light {
+      .navbar-brand{
+        @include theme-map() {
+          color: map-get($list, "default");
+        }
+      }
+      .navbar-nav {
+        .nav-link {
+          @include theme-map() {
+            color: map-get($list, "default");
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    padding: 10px 0px;
+    & > .container {
+      position: relative;
+    }
+  }
+}
+
+.right-bar {
+  .navbar-toggler {
+    position: static;
+  }
+  @include media-breakpoint-down(lg) {
+    display: flex;
+    align-items: center;
+    @include position(absolute, 0, $grid-columns+px, null, null);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}

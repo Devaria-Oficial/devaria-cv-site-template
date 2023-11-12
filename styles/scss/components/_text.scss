@@ -1,0 +1,8 @@
+@include theme-map-no-selector() {
+  $theme-colors: map-get($list, "theme-colors");
+  @each $key, $val in $theme-colors {
+    .text-#{$key} {
+      color: $val !important;
+    }
+  }
+}

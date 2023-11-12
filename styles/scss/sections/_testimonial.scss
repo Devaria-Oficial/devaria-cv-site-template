@@ -1,0 +1,82 @@
+
+.comment {
+  .author-thumb {
+    margin-right: 15px;
+    width: 60px;
+    height: 60px;
+    img {
+      border-radius: 4px;
+    }
+  }
+  .author-info {
+    display: flex;
+    flex-direction: column;
+    .name {
+      font-weight: 600;
+      color: $black;
+    }
+    .job {
+      font-size: 12px;
+    }
+  }
+  .author-desc {
+    margin-top: 15px;
+    width: 100%
+  }
+}
+
+.testimonials {
+  overflow: hidden;
+  .swiper-slide {
+    padding:15px;
+  }
+  .comment {
+    @include box-shadow($testi-box-shadow);
+    width: 100%;
+    padding: 30px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include theme-map() {
+      background-color: lighten(map-get(map-get($list, 'theme-colors'), 'light'), 5);
+    }
+  }
+}
+
+.testimonials-2 {
+  .swiper-slide{
+    padding: 15px 20px;
+  }
+  .comment {
+    padding: 30px;
+    @include media-breakpoint-down(md) {
+      padding: 15px;
+    }
+  }
+}
+
+.testimonials-slider-3 {
+  .comment {
+    padding: 50px 80px;
+    @include media-breakpoint-down(md) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+  }
+  .testi-logo {
+    margin-bottom: 15px;
+    img {
+      height: 75px;
+    }
+  }
+  .testi-text {
+    font-size: px-rem-converter(24px);
+    @include media-breakpoint-down(md) {
+      font-size: px-rem-converter(20px);
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: px-rem-converter(18px);
+    }
+  }
+}

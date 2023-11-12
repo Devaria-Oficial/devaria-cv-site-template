@@ -1,0 +1,117 @@
+html {
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  font-family: $font-primary;
+  overflow-x: hidden;
+  position: relative;
+  font-size: $body-font-size;
+  line-height: $body-lh;
+  overflow-x: hidden;
+  background-color: map-get(map-get($theme-list , 'light'), 'body-bg');
+  color: map-get(map-get($theme-list , 'light'), "default");
+  &.theme-dark {
+    background-color: map-get(map-get($theme-list , 'dark'), 'body-bg');
+    color: map-get(map-get($theme-list , 'dark'), "default");
+  }
+}
+
+.body-bg {
+  background-image: url("#{$image-path}/bg.png");
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  @include theme-map() {
+    color: map-get($list, "default");
+  }
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+hr {
+  background: $gray-200;
+  opacity: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+strong {
+  font-family: $font-secondary;
+  @include theme-map() {
+    color: map-get($list, "heading-color");
+  }
+  font-weight: 600;
+}
+
+label {
+  font-weight: 500;
+}
+
+h1,
+.h1 {
+  font-size: 48px;
+  line-height: 60px;
+}
+
+h2,
+.h2 {
+  font-size: 36px;
+  line-height: 48px;
+}
+
+h3,
+.h3 {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+h4,
+.h4 {
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+h5,
+.h5 {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+h6,
+.h6 {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+blockquote {
+  font-size: px-rem-converter(18px);
+}
+
+.container {
+  @include media-breakpoint-up(xxl) {
+    max-width: 1170px;
+  }
+}
+
+figure {
+  margin-bottom: 0;
+}
