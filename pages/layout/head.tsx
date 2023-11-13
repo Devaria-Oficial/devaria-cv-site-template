@@ -16,7 +16,7 @@ const AppHead: React.FC<IHead> = ({ title }) => (
     <meta name="robots" content="noindex, nofollow" />
     <meta name="author" content="LettStartDesign" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title || 'Homepage'} | Mono CV - Portfolio and Resume Website Templates</title>
+    <title>Devaria CV Template</title>
     <link rel="shortcut icon" type="image/png" sizes="32x32" href={imagePath + "favicon.ico"} />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
   </NextHead>
