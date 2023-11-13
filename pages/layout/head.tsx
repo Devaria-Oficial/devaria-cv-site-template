@@ -12,7 +12,7 @@ const AppHead: React.FC<IHead> = ({ title }) => (
     <meta charSet="UTF-8" />
     <meta name="robots" content="noindex, nofollow" />
     <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="title" content={`${title || 'Homepage'} | Mono CV - Portfolio and Resume Website Templates`}  />
+    <meta name="title" content={`Devaria CV Template`}  />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="author" content="LettStartDesign" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
